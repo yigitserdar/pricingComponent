@@ -1,0 +1,2 @@
+# pricingComponent
+a frontendmentor challange
