@@ -4,7 +4,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: [
+        'Montserrat',
+        'sans-serif',
+      ],
+    },
+    extend: {
+    width: {
+        custom: '31%'
+      }
+    },
   },
   variants: {
     extend: {},
