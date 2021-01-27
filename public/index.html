@@ -15,10 +15,10 @@
         <label for="toggle" class="relative">
           <input type="checkbox" name="toggle" id="" class="hidden" />
           <div
-            class="absolute w-16 h-8 rounded-full shadow-inner inset-y-0 bg-blue-300"
+            class="toggle-tray absolute w-16 h-8 rounded-full shadow-inner inset-y-0 bg-blue-300"
           ></div>
           <div
-            class="absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 mt-1 ml-1 "
+            class="btn-toggle absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 mt-1 ml-1 "
           ></div>
         </label>
       </div>
@@ -34,7 +34,7 @@
       <h5 class="font-bold text-base">Basic</h5>
       <h2 class="pb-4 flex justify-center font-bold border-b border-gray-300">
         <span class="text-3xl mt-6 mr-1">$</span
-        ><span class="text-6xl"> 199.99</span>
+        ><span class="basic-price text-6xl"> 199.99</span>
       </h2>
       <ul class="text-sm font-bold">
         <li class="pt-4 pb-4 border-b border-gray-300">500 GB Storage</li>
@@ -55,7 +55,7 @@
         class="font-bold pb-4 mt-2 border-b border-gray-100 flex justify-center"
       >
         <span class="text-3xl mt-6 mr-1">$</span
-        ><span class="text-6xl "> 249.99</span>
+        ><span class="pro-price text-6xl "> 249.99</span>
       </h2>
       <ul class=" text-sm font-bold">
         <li class="pt-4 pb-4 border-b border-gray-200">1 TB Storage</li>
@@ -74,7 +74,7 @@
       <h5 class="font-bold text-base">Master</h5>
       <h2 class="flex justify-center pb-4 font-bold border-b border-gray-200">
         <span class="text-3xl mt-6 mr-1">$</span
-        ><span class="text-6xl">399.99</span>
+        ><span class="master-price text-6xl">399.99</span>
       </h2>
       <ul class="text-sm font-bold">
         <li class="pt-4 pb-4 border-b border-gray-200">2 TB Storage</li>
@@ -91,5 +91,34 @@
   <div class="flex justify-center">
     <p>Challenge by <a class="font-bold" href="https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC" target="_blank">Frontend Mentor</a></p>
   </div>
+  <script>
+
+     const btn = document.querySelector(".btn-toggle");
+     const toggleTray = document.querySelector(".toggle-tray");
+     const basicPrice = document.querySelector(".basic-price");
+     const proPrice = document.querySelector(".pro-price");
+     const masterPrice = document.querySelector(".master-price");
+
+// Listen for a click on the tray
+  toggleTray.addEventListener("click", function() {
+
+  if (btn.style.marginLeft == "0.25rem") {
+
+btn.style.marginLeft = "2.2em";
+toggleTray.style.backgroundColor = "#60A5FA";
+basicPrice.innerHTML = "19.99";
+proPrice.innerHTML = "29.99";
+masterPrice.innerHTML = "39.99";
+// Otherwise...
+} else {
+// ... switch back
+btn.style.marginLeft = "0.25rem";
+toggleTray.style.backgroundColor = "#93C5FD";
+basicPrice.innerHTML = "199.99";
+proPrice.innerHTML = "249.99";
+masterPrice.innerHTML = "399.99";
+}
+});
+  </script>
 </body>
 </html>
