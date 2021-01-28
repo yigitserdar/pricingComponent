@@ -13,7 +13,7 @@ module.exports = {
     extend: {
     width: {
         custom: '31%'
-      }
+      },
     },
   },
   variants: {
