@@ -12,10 +12,10 @@
     <div class="pt-8 w-3/5 md:w-2/5  lg:w-1/5 flex justify-around ">
       <p class="text-sm text-gray-500 font-bold mt-2">Annually</p>
       <div>
-        <label for="toggle" class="relative">
+        <label for="toggle" class="relative toggle-tray">
           <input type="checkbox" name="toggle" id="" class="hidden" />
           <div
-            class="toggle-tray absolute w-16 h-8 rounded-full shadow-inner inset-y-0 bg-blue-300"
+            class="toggle-background absolute w-16 h-8 rounded-full shadow-inner inset-y-0 bg-blue-300"
           ></div>
           <div
             class="btn-toggle absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 mt-1 ml-1 "
@@ -95,25 +95,26 @@
 
      const btn = document.querySelector(".btn-toggle");
      const toggleTray = document.querySelector(".toggle-tray");
+     const toggleBackground = document.querySelector(".toggle-background");
      const basicPrice = document.querySelector(".basic-price");
      const proPrice = document.querySelector(".pro-price");
      const masterPrice = document.querySelector(".master-price");
 
-// Listen for a click on the tray
+// Listen for a click on the label
   toggleTray.addEventListener("click", function() {
 
   if (btn.style.marginLeft == "0.25rem") {
 
 btn.style.marginLeft = "2.2em";
-toggleTray.style.backgroundColor = "#60A5FA";
+toggleBackground.style.backgroundColor = "#60A5FA";
 basicPrice.innerHTML = "19.99";
 proPrice.innerHTML = "29.99";
 masterPrice.innerHTML = "39.99";
 // Otherwise...
 } else {
-// ... switch back
+// ... switch back to initials
 btn.style.marginLeft = "0.25rem";
-toggleTray.style.backgroundColor = "#93C5FD";
+toggleBackground.style.backgroundColor = "#93C5FD";
 basicPrice.innerHTML = "199.99";
 proPrice.innerHTML = "249.99";
 masterPrice.innerHTML = "399.99";
